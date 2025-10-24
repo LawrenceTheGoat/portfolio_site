@@ -28,13 +28,6 @@ const Portfolio = () => {
             <div className="images-container">
                 {
                     portfolio.map((port, idx) => {
-                        // support per-item scaling via `scale` (number) in portfolio.json
-                        const imgStyle = {};
-                        if (port.scale && typeof port.scale === 'number') {
-                            imgStyle.transform = `scale(${port.scale})`;
-                            imgStyle.transformOrigin = 'center top';
-                        }
-
                         return (
                             <div className="image-box" key={idx}>
                                 <img 
@@ -42,7 +35,6 @@ const Portfolio = () => {
                                 className="portfolio-image"
                                 alt={port.title || port.name || 'portfolio'}
                                 loading="lazy"
-                                style={imgStyle}
                                 />
                                 <div className="content">
                                     <p className="title">{port.title || port.name}</p>
