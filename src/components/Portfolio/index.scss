@@ -37,8 +37,17 @@
         .content {
             position: absolute;
             width: 100%;
+            left: 0;
+            right: 0;
+            box-sizing: border-box;
+            /* prevent text from overflowing the card */
+            overflow-wrap: break-word;
+            hyphens: auto;
+            /* hide overflow inside the card and rely on truncation / modal for full text */
+            max-height: 55%;
+            overflow: hidden;
             z-index: 3;
-            padding: 10px 20px;
+            padding: 12px 22px;
             transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
             background: linear-gradient(
                 180deg,
@@ -48,42 +57,82 @@
             bottom: -70px;
         }
 
+        // Improved typography for portfolio cards
         .title {
-            margin-bottom: 0;
+            margin-bottom: 6px;
             margin-top: 0;
             color: #fff;
-            font-size: 24px;
-            font-weight: 500;
-            line-height: 24px;
+            /* responsive size */
+            font-size: clamp(20px, 2.2vw, 24px);
+            font-weight: 700;
+            line-height: 1.1;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+            letter-spacing: -0.02em;
+            /* clamp title to 2 lines with ellipsis */
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .description {
-            font-size: 14px;
-            margin-bottom: 5px;
-            color: #fff;
-            font-weight: 700;
+            font-size: clamp(13px, 1.6vw, 14px);
+            margin-bottom: 8px;
+            color: #f5f5f5;
+            font-weight: 600;
+            line-height: 1.3;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+            /* clamp description to 3 lines with ellipsis */
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .btn {
-            margin-top: 30px;
+            margin-top: 24px;
             margin-bottom: 10px;
-            padding: 0 23px;
-            height: 40px;
-            line-height: 34px;
+            padding: 0 20px;
+            height: 42px;
+            line-height: 40px;
             border: 2px solid #ffd700;
-            border-radius: 4px;
-            font-size: 14px;
+            border-radius: 6px;
+            font-size: 13px;
             color: #fff;
-            background: transparent;
+            background: rgba(0,0,0,0.25);
             text-transform: uppercase;
-            font-weight: 700;
-            transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
             cursor: pointer;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.02);
             background: #ffd700;
+            color: #000;
+        }
+
+        /* GitHub icon tweaks: slightly larger and vertically centered */
+        .github-btn {
+            padding: 8px 10px; /* a bit more padding to balance icon */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .github-btn svg {
+            width: 22px;
+            height: 22px;
+            display: inline-block;
+            vertical-align: middle;
+            transform: translateY(1px); /* nudge down for visual centering */
         }
 
         &:after {
@@ -108,6 +157,22 @@
         &:hover .content {
             bottom: 0;
             background: transparent;
+            /* allow the content to expand / be visible on hover */
+            max-height: 100%;
+            overflow: visible;
+            padding-bottom: 18px;
+        }
+
+        /* reveal full title & description when hovering the card */
+        &:hover .content .title,
+        &:hover .content .description {
+            display: block;
+            -webkit-line-clamp: unset;
+            line-clamp: unset;
+            -webkit-box-orient: unset;
+            overflow: visible;
+            text-overflow: clip;
+            white-space: normal;
         }
     }
 }

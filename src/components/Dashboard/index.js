@@ -9,13 +9,17 @@ const Dashboard = () => {
     const auth = getAuth();
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            console.log('onAuthStateChanged:', user);
             if(user) {
                 setUser(user);
             } else {
                 setUser(null);
             }
-        })
+        });
+
+        // cleanup subscription on unmount
+        return () => unsubscribe();
     }, [auth]);
 
 

@@ -5,8 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faLinkedin,
   faGithub,
-  faYoutube,
-  faSkype,
+  faInstagram
 } from '@fortawesome/free-brands-svg-icons'
 import {
   faHome,
@@ -96,9 +95,9 @@ const Sidebar = () => {
           </a>
         </li>
         <li>
-          <a href="skype:live:bobangajicsm" rel="noreferrer" target="_blank">
+          <a href="https://www.instagram.com/lawrence.wang2/" rel="noreferrer" target="_blank">
             <FontAwesomeIcon
-              icon={faSkype}
+              icon={faInstagram}
               color="#4d4d4e"
               className="anchor-icon"
             />

@@ -1,16 +1,17 @@
 {
     "portfolio": [
         {
-            "cover": "/portfolio/1/one.png",
-            "title": "GGWP",
-            "description": "React, JSX, Tailwind, Jest",
-            "url": "http://google.com"
+            "cover": "/portfolio/1/backgammonImage.png",
+            "title": "Backgammon Game",
+            "description": "Java implementation of the classic board game Backgammon with an AI opponent, made using OOP with UX/QoL considerations and complex game mechanics.",
+            "url": "https://github.com/LawrenceTheGoat/backgammonGame",
+            "demo": "https://youtu.be/-Fr-X7BUPMs"
         },
         {
-            "cover": "/portfolio/1/one.png",
-            "title": "GGWP",
-            "description": "React, JSX, Tailwind, Jest",
-            "url": "http://google.com"
+            "cover": "/portfolio/1/logo-s.png",
+            "title": "lawrencewang.site",
+            "description": "React + Sass portfolio showcasing API-driven features: REST integrations, OAuth, resumable uploads with CORS handling, lazy loading, accessible UX, and optional Firebase persistence",
+            "url": "https://github.com/LawrenceTheGoat/portfolio_site"
         },
         {
             "cover": "/portfolio/1/one.png",
