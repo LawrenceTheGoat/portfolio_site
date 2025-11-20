@@ -1,6 +1,6 @@
 React portfolio website
 
-This repository contains a React-based portfolio website (Create React App) with Firebase integration used for authentication and optional hosting.
+This repository contains a React-based portfolio website with Firebase integration used for authentication and optional hosting.
 
 Prerequisites
 - Node.js (v16+ recommended) and npm installed
@@ -61,12 +61,4 @@ This repo contains GitHub Actions workflows to run the build and (optionally) de
 
 - `FIREBASE_TOKEN` (if you use the classic `firebase login:ci` token)
 - or individual `REACT_APP_FIREBASE_*` values for build-time injection
-
-Security notes (short)
-
-- The Firebase client `apiKey` found in client code is not the same as a service-account secret, but you should still avoid committing credentials to source control.
-- If you accidentally committed admin/service-account keys, rotate and revoke them immediately in the Google Cloud Console and consider scrubbing git history (BFG or `git filter-repo`).
-- To further harden deploys, use a minimal service account + Workload Identity Federation (OIDC) from GitHub Actions to avoid long-lived JSON keys in secrets.
-
-If you want, I can add step-by-step commands to rotate keys or to update the workflows to use environment secrets or OIDC.
 
