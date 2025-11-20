@@ -11,7 +11,7 @@ const Home = () => {
 
     const submitPortfolio = async (e) => {
         e.preventDefault();
-        console.debug('submitPortfolio invoked');
+        console.debug('submitPortfolio invoke`d');
         if (pending) {
             console.debug('submit ignored, pending already in progress');
             return;

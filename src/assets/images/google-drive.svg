@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+  <!-- Google Drive logo: composed of three colored chevrons -->
+  <polygon points="12,2 22,15 12,15" fill="#0F9D58" />
+  <polygon points="12,2 2,15 12,15" fill="#4285F4" />
+  <polygon points="2,15 12,22 22,15 12,15" fill="#F4B400" />
+</svg>

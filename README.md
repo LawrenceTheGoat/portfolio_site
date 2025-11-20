@@ -1,0 +1,72 @@
+React portfolio website
+
+This repository contains a React-based portfolio website (Create React App) with Firebase integration used for authentication and optional hosting.
+
+Prerequisites
+- Node.js (v16+ recommended) and npm installed
+- Optional: Firebase CLI if you plan to deploy with `firebase deploy`
+
+Quickstart — clone and run locally
+
+1. Clone the repository
+
+```bash
+git clone git@github.com:LawrenceTheGoat/portfolio_site.git
+cd portfolio_site
+```
+
+2. Install dependencies
+
+Use a clean install which is reproducible for CI:
+
+```bash
+npm ci
+# or if you need to add packages during development: npm install
+```
+
+3. Create local environment variables
+
+This project expects Firebase configuration to be provided as environment variables named `REACT_APP_FIREBASE_*` (see `.env.example`). Copy the example and fill in values from your Firebase project:
+
+```bash
+cp .env.example .env
+# edit .env and paste your project's REACT_APP_FIREBASE_API_KEY, REACT_APP_FIREBASE_AUTH_DOMAIN, etc.
+```
+
+Important: Do not commit `.env` — it is included in `.gitignore`.
+
+4. Start the dev server
+
+```bash
+npm start
+```
+
+Build and deploy
+
+- To create a production build:
+
+```bash
+npm run build
+```
+
+- To deploy to Firebase Hosting (if configured):
+
+```bash
+firebase deploy --only hosting
+```
+
+CI / GitHub Actions
+
+This repo contains GitHub Actions workflows to run the build and (optionally) deploy to Firebase. Instead of embedding keys in the repo, the workflows should receive Firebase credentials / API keys via GitHub Secrets. Recommended secret names:
+
+- `FIREBASE_TOKEN` (if you use the classic `firebase login:ci` token)
+- or individual `REACT_APP_FIREBASE_*` values for build-time injection
+
+Security notes (short)
+
+- The Firebase client `apiKey` found in client code is not the same as a service-account secret, but you should still avoid committing credentials to source control.
+- If you accidentally committed admin/service-account keys, rotate and revoke them immediately in the Google Cloud Console and consider scrubbing git history (BFG or `git filter-repo`).
+- To further harden deploys, use a minimal service account + Workload Identity Federation (OIDC) from GitHub Actions to avoid long-lived JSON keys in secrets.
+
+If you want, I can add step-by-step commands to rotate keys or to update the workflows to use environment secrets or OIDC.
+
