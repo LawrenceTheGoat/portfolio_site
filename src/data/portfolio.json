@@ -1,6 +1,18 @@
 {
     "portfolio": [
         {
+            "cover": "/portfolio/1/logo-s.png",
+            "title": "VidGrep",
+            "description": "Multimodal RAG system that searches YouTube videos by both on-screen content and spoken audio, returning timestamped moments with auto-seeking playback. Built with Python, Streamlit, Ollama (Moondream), LangChain, ChromaDB, and FFmpeg.",
+            "url": "https://github.com/LawrenceTheGoat/vidgrep"
+        },
+        {
+            "cover": "/portfolio/1/logo-s.png",
+            "title": "WATWINGS",
+            "description": "2,900-line zero-dependency 3D flight simulator streaming a live 1:1 photogrammetry mesh of Waterloo via Google's Photorealistic 3D Tiles API. Features 6-DOF flight physics, raycast collision, HUD with off-screen target indicators, and a Web Audio engine with zero audio asset files.",
+            "url": "https://github.com/LawrenceTheGoat/watwings"
+        },
+        {
             "cover": "/portfolio/1/backgammonImage.png",
             "title": "Backgammon Game",
             "description": "Java implementation of the classic board game Backgammon with an AI opponent, made using OOP with UX/QoL considerations and complex game mechanics.",
@@ -12,8 +24,7 @@
             "title": "lawrencewang.site",
             "description": "React + Sass portfolio showcasing API-driven features: REST integrations, OAuth, resumable uploads with CORS handling, lazy loading, accessible UX, and optional Firebase persistence",
             "url": "https://github.com/LawrenceTheGoat/portfolio_site"
-        }
-        ,
+        },
         {
             "cover": "/portfolio/1/cannonCart.png",
             "title": "Cannon Cart Model",
