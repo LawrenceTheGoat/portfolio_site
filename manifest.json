@@ -1,0 +1,25 @@
+{
+  "short_name": "LawrenceW",
+  "name": "Lawrence Wang Portfolio",
+  "icons": [
+    {
+      "src": "portfolio/1/logo-s.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "portfolio/1/logo-s.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "portfolio/1/logo-s.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
