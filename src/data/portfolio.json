@@ -4,8 +4,7 @@
             "cover": "/portfolio/1/logo-s.png",
             "title": "VidGrep",
             "description": "Multimodal RAG system that searches YouTube videos by both on-screen content and spoken audio, returning timestamped moments with auto-seeking playback. Built with Python, Streamlit, Ollama (Moondream), LangChain, ChromaDB, and FFmpeg.",
-            "url": "https://github.com/LawrenceTheGoat/vidgrep",
-            "demo": "https://github.com/LawrenceTheGoat/vidgrep/blob/main/demo.mp4"
+            "url": "https://github.com/LawrenceTheGoat/vidgrep"
         },
         {
             "cover": "/portfolio/1/logo-s.png",
