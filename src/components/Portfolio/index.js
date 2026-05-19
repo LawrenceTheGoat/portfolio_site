@@ -24,6 +24,15 @@ const Portfolio = () => {
         setPortfolio(portfolioData.portfolio || []);
     }, []);
 
+    // Prefix root-relative paths with PUBLIC_URL so images resolve correctly
+    // when the site is hosted under a subpath (e.g. GitHub Pages).
+    const resolveCover = (raw) => {
+        if (!raw) return raw;
+        if (/^https?:\/\//.test(raw)) return raw;
+        if (raw.startsWith('/')) return `${process.env.PUBLIC_URL}${raw}`;
+        return raw;
+    };
+
     const renderPortfolio = (portfolio) => {
         return (
             <div className="images-container">
@@ -31,8 +40,8 @@ const Portfolio = () => {
                     portfolio.map((port, idx) => {
                         return (
                             <div className="image-box" key={idx}>
-                                <img 
-                                src={port.cover || port.image}
+                                <img
+                                src={resolveCover(port.cover || port.image)}
                                 className="portfolio-image"
                                 alt={port.title || port.name || 'portfolio'}
                                 loading="lazy"
